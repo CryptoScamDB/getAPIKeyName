@@ -3,7 +3,7 @@ const https = require('https');
 
 exports.handler = async (event, context, callback) => {
   // our variables
-  const id = event.data;
+  const id = event.data
   const access_key = process.env.accessKeyID; // TODO: Change to process.env.accessKeyID
   const secret_key = process.env.secretKey; // TODO: Change to process.env.secretKey
   const region = 'us-east-1';
@@ -67,7 +67,7 @@ exports.handler = async (event, context, callback) => {
   // call our function
   
 
-  const outputName = await performRequest(url, headers, payload, async function(response) {
+  const outputName = await performRequest(url, headers, payload, myPath, async function(response) {
     return JSON.parse(response).name;
   });
   if(outputName!= undefined) {
@@ -98,14 +98,14 @@ exports.handler = async (event, context, callback) => {
 }
 
 // the REST API call using the Node.js 'https' module
-async function performRequest (endpoint, headers, data, success) {
+async function performRequest (endpoint, headers, data, thispath, success) {
   return new Promise((resolve, reject) => {
     var dataString = data;
  
     var options = {
       host: endpoint,
       port: 443,
-      path: '/apikeys/skn2zw23ad/',
+      path: thispath,
       method: 'GET',
       headers: headers
     };

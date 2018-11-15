@@ -1,7 +1,7 @@
 {
   "name": "@crypotoscamdb/getapikeyname",
   "version": "0.0.1",
-  "description": "An AWS Lambda script for grabbing the name associated with an api key",
+  "description": "An AWS Lambda script for grabbing the name assocaited with an api key",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
